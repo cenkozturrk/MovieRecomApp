@@ -6,14 +6,9 @@ namespace MovieRecommendation.Core
 {
     public class MovieContext : DbContext
     {
-        internal readonly object Configuration;
-
+        //internal readonly object Configuration;
         //protected readonly IConfiguration Configuration;
 
-        public MovieContext()
-        {
-
-        }
         public MovieContext(DbContextOptions<MovieContext> options)
             : base(options)
         {
@@ -21,13 +16,13 @@ namespace MovieRecommendation.Core
         }
         public virtual DbSet<Movie> MovieLists { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Movie>();
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Movie>();
 
-            OnModelCreatingPartial(modelBuilder);
+        //    OnModelCreatingPartial(modelBuilder);
 
-        }
+        //}
 
         //protected override void OnConfiguring(DbContextOptionsBuilder options)
         //{
@@ -35,6 +30,6 @@ namespace MovieRecommendation.Core
         //    options.UseSqlServer(Configuration.GetConnectionString("WebApiDatabase"));
         //}
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

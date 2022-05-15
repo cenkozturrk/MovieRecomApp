@@ -11,6 +11,7 @@ namespace MovieRecommendation.Core.Services
     {
         private readonly DbContext _context;
         private readonly DbSet<Movie> _dbSet;
+        private readonly IRepository<Movie> _repository;
         public MovieRepository(DbContext context)
         {
             this._context = context ?? throw new ArgumentException(null, nameof(context));

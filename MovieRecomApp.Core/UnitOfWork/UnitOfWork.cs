@@ -18,7 +18,7 @@ namespace MovieRecomApp.Core.UnitOfWork
 
             _movieContext = context;
 
-            MovieRepository<Movie> = new MovieRepository<Movie>(_movieContext);
+            //MovieRepository<Movie> = new MovieRepository<Movie>(_movieContext);
 
             //Database.SetInitializer<MovieContext>(null);
 
