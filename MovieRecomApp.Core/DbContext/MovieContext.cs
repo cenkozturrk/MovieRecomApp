@@ -6,6 +6,8 @@ namespace MovieRecommendation.Core
 {
     public class MovieContext : DbContext
     {
+        internal readonly object Configuration;
+
         //protected readonly IConfiguration Configuration;
 
         public MovieContext()

@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace MovieRecommendation.Core.Services
 {
-    public class MovieRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class MovieRepository<Movie> : IRepository<Movie> where Movie : class
     {
         private readonly DbContext _context;
-        private readonly DbSet<TEntity> _dbSet;
+        private readonly DbSet<Movie> _dbSet;
         public MovieRepository(DbContext context)
         {
             this._context = context ?? throw new ArgumentException(null, nameof(context));
-            _dbSet = this._context.Set<TEntity>();
+            _dbSet = this._context.Set<Movie>();
         }
 
-        public void CreateMovie(TEntity entity)
+        public void CreateMovie(Movie entity)
         {
             _dbSet.Add(entity);
         }
 
-        public void CreateRange(IEnumerable<TEntity> entities)
+        public void CreateRange(IEnumerable<Movie> entities)
         {
             _dbSet.AddRange(entities);
         }
@@ -32,22 +32,22 @@ namespace MovieRecommendation.Core.Services
             _dbSet.Remove(GetById(id));
         }
 
-        public void DeleteRange(IEnumerable<TEntity> entities)
+        public void DeleteRange(IEnumerable<Movie> entities)
         {
             _dbSet.RemoveRange(entities);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public IEnumerable<Movie> GetAll()
         {
             return _dbSet.ToList();
         }
 
-        public TEntity GetById(Guid id)
+        public Movie GetById(Guid id)
         {
             return _dbSet.Find(id);
         }
 
-        public void UpdateMovie(TEntity entity)
+        public void UpdateMovie(Movie entity)
         {
             _dbSet.Update(entity);
         }
