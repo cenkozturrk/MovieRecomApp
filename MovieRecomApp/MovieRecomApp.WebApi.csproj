@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MovieRecomApp.Core\MovieRecomApp.Core.csproj" />
+    <ProjectReference Include="..\MovieRecommApp.DataAccess\MovieRecommApp.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

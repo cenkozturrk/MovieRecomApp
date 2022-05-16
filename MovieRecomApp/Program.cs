@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using MovieRecomApp.Core.Repositories.Abstract;
+using MovieRecommApp.DataAccess;
 using MovieRecommendation.Core;
+using MovieRecommendation.Core.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 string connString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -9,6 +12,10 @@ builder.Services.AddControllers();
 
 string cs = "server=ceku; database=MovieDb; trusted_connection=true";
 builder.Services.AddDbContext<EntityContext>(options => options.UseSqlServer(cs));
+
+builder.Services.AddTransient<IMovieRepository, IMovieRepository>();
+//builder.Services.AddTransient<IRepository, EntityRepository();
+
 
 
 //builder.Services.AddDbContext<MovieContext>(options =>

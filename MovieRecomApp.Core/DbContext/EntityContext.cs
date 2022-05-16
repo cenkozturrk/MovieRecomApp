@@ -20,19 +20,28 @@ namespace MovieRecommendation.Core
         }
         public virtual DbSet<Movie> MovieLists { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Movie>();
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Movie>(entity =>
+            {
+                base.OnModelCreating(modelBuilder);
+                entity.HasNoKey();
+                entity.ToTable("Movie");
+                entity.Property(e => e.Id).HasColumnName("MovieId");
+                entity.Property(e => e.Name).HasMaxLength(15).IsUnicode(false);
+                entity.Property(e => e.Note).HasMaxLength(10).IsUnicode(false);
 
-        //    OnModelCreatingPartial(modelBuilder);
 
-        //}
+            });
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder options)
-        //{
-        //    // connect to sql server with connection string from app settings
-        //    options.UseSqlServer(Configuration.GetConnectionString("WebApiDatabase"));
-        //}
+            //protected override void OnConfiguring(DbContextOptionsBuilder options)
+            //{
+            //    // connect to sql server with connection string from app settings
+            //    options.UseSqlServer(Configuration.GetConnectionString("WebApiDatabase"));
+            //}
+
+            //OnModelCreatingPartial(modelBuilder); ;
+        }
 
         //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
