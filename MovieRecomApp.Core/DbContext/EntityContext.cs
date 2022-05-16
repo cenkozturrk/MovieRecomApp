@@ -4,12 +4,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace MovieRecommendation.Core
 {
-    public class MovieContext : DbContext
+    public class EntityContext : DbContext
     {
+        public EntityContext()
+        {
+        }
+
         //internal readonly object Configuration;
         //protected readonly IConfiguration Configuration;
 
-        public MovieContext(DbContextOptions<MovieContext> options)
+        public EntityContext(DbContextOptions<EntityContext> options)
             : base(options)
         {
 

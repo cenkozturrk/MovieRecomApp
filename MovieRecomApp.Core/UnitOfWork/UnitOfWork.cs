@@ -12,8 +12,8 @@ namespace MovieRecomApp.Core.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly MovieContext _movieContext;
-        public UnitOfWork(MovieContext context)
+        private readonly EntityContext _movieContext;
+        public UnitOfWork(EntityContext context)
         {
 
             _movieContext = context;

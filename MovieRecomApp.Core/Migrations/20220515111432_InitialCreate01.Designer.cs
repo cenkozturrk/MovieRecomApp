@@ -11,7 +11,7 @@ using MovieRecommendation.Core;
 
 namespace MovieRecomApp.Core.Migrations
 {
-    [DbContext(typeof(MovieContext))]
+    [DbContext(typeof(EntityContext))]
     [Migration("20220515111432_InitialCreate01")]
     partial class InitialCreate01
     {

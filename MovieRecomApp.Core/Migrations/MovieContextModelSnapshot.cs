@@ -10,7 +10,7 @@ using MovieRecommendation.Core;
 
 namespace MovieRecomApp.Core.Migrations
 {
-    [DbContext(typeof(MovieContext))]
+    [DbContext(typeof(EntityContext))]
     partial class MovieContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

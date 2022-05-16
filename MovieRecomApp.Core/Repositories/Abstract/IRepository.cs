@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieRecomApp.Core.Repositories.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,10 @@ namespace MovieRecommendation.Core
     {
         TEntity GetById(Guid id);
         IEnumerable<TEntity> GetAll();
-        void CreateMovie(TEntity entity);
-        void CreateRange(IEnumerable<TEntity> entities);
-        void UpdateMovie(TEntity entity);
-        void DeleteMovie(Guid id);
+        void Add(TEntity entity);
+        void AddRange(IEnumerable<TEntity> entities);
+        void Update(TEntity entity);
+        void Delete(Guid id);
         void DeleteRange(IEnumerable<TEntity> entities);
 
     }

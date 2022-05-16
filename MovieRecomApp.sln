@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRecomApp.WebApi", "MovieRecomApp\MovieRecomApp.WebApi.csproj", "{FF2C7E6A-3D5A-4EA3-ABF7-882105AA29A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRecomApp.WebApi", "MovieRecomApp\MovieRecomApp.WebApi.csproj", "{FF2C7E6A-3D5A-4EA3-ABF7-882105AA29A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRecom.Entity", "MovieRecom.Entity\MovieRecom.Entity.csproj", "{48C51377-0FDA-4FB8-922B-8CA64664AD28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRecom.Entity", "MovieRecom.Entity\MovieRecom.Entity.csproj", "{48C51377-0FDA-4FB8-922B-8CA64664AD28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRecomApp.Core", "MovieRecomApp.Core\MovieRecomApp.Core.csproj", "{0BFD3AFB-9F5C-4C40-AC0E-961E0689F15B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRecomApp.Core", "MovieRecomApp.Core\MovieRecomApp.Core.csproj", "{0BFD3AFB-9F5C-4C40-AC0E-961E0689F15B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRecommApp.DataAccess", "MovieRecommApp.DataAccess\MovieRecommApp.DataAccess.csproj", "{7421B3B8-C11E-478E-B832-23974E3FA29E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRecommApp.Business", "MovieRecommApp.Business\MovieRecommApp.Business.csproj", "{6E9409E7-6FF5-421F-8651-11E234938EAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{0BFD3AFB-9F5C-4C40-AC0E-961E0689F15B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BFD3AFB-9F5C-4C40-AC0E-961E0689F15B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BFD3AFB-9F5C-4C40-AC0E-961E0689F15B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7421B3B8-C11E-478E-B832-23974E3FA29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7421B3B8-C11E-478E-B832-23974E3FA29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7421B3B8-C11E-478E-B832-23974E3FA29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7421B3B8-C11E-478E-B832-23974E3FA29E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E9409E7-6FF5-421F-8651-11E234938EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9409E7-6FF5-421F-8651-11E234938EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9409E7-6FF5-421F-8651-11E234938EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9409E7-6FF5-421F-8651-11E234938EAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

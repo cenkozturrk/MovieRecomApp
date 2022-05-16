@@ -8,7 +8,7 @@ string connString = builder.Configuration.GetConnectionString("DefaultConnection
 builder.Services.AddControllers();
 
 string cs = "server=ceku; database=MovieDb; trusted_connection=true";
-builder.Services.AddDbContext<MovieContext>(options => options.UseSqlServer(cs));
+builder.Services.AddDbContext<EntityContext>(options => options.UseSqlServer(cs));
 
 
 //builder.Services.AddDbContext<MovieContext>(options =>
