@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MovieRecommApp.Business.MediatR.Commands;
 using MovieRecommApp.Business.MediatR.Queries;
 using MovieRecommendation.Core;
 using MovieRecommendation.Core.Services;
@@ -39,6 +40,13 @@ namespace MovieRecomApp.Controllers
             return Ok(await mediator.Send(query));
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Post(CreateMovieCommand command)
+        {
+            var query = new GetAllMovieQuery();
+
+            return Ok(await mediator.Send(command));
+        }
 
     }
 }

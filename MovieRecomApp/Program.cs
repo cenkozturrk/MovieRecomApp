@@ -10,6 +10,7 @@ string connString = builder.Configuration.GetConnectionString("DefaultConnection
 // Add services to the container.
 
 builder.Services.AddControllers();
+
 builder.Services.AddApplication();
 
 string cs = "server=ceku; database=MovieDb; trusted_connection=true";

@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MediatR\Commands\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MovieRecom.Entity\MovieRecom.Entity.csproj" />
     <ProjectReference Include="..\MovieRecommApp.DataAccess\MovieRecommApp.DataAccess.csproj" />
   </ItemGroup>
