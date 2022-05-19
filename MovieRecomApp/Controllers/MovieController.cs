@@ -1,6 +1,8 @@
 ﻿using Entities;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MovieRecommApp.Business.MediatR.Queries;
 using MovieRecommendation.Core;
 using MovieRecommendation.Core.Services;
 using System.Net;
@@ -13,52 +15,30 @@ namespace MovieRecomApp.Controllers
     {
         private IRepository<Movie> _repository;
 
-        public MovieController(IRepository<Movie> repository)
-        {
-            _repository = repository;
-        }
+        private readonly IMediator mediator;
 
-        [HttpGet]
-        public Movie Get(Guid id)
+
+        public MovieController(IMediator mediator)
         {
-            return _repository.GetById(id);
+            this.mediator = mediator;
         }
 
         [HttpGet("{id}")]
-        public List<Movie> Get()
+        public async Task<IActionResult> Get(Guid id)
         {
-            return (List<Movie>)_repository.GetAll();
+            var query = new GetMovieByIQuery() { Id = id };
+
+            return Ok(await mediator.Send(query));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var query = new GetAllMovieQuery();
+
+            return Ok(await mediator.Send(query));
         }
 
 
-        [HttpPost]
-        public void Post([FromBody]Movie movie)
-        {
-            _repository.CreateMovie(movie);
-        }
-
-        [HttpPost]
-        public void PostRange([FromBody]Movie movie)
-        {
-             _repository.CreateRange(movie);
-        }
-
-        [HttpPut]
-        public void Put([FromBody] Movie movie)
-        {
-             _repository.UpdateMovie(movie);
-        }
-
-        [HttpDelete("{id}")]
-        public void Delete(Guid id)
-        {
-             _repository.DeleteMovie(id);
-        }
-
-        [HttpDelete()]
-        public void DeleteRange(Guid id)
-        {
-            _repository.DeleteMovie(id);
-        }
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MovieRecomApp.Core.Repositories.Abstract;
+using MovieRecommApp.Business;
 using MovieRecommApp.DataAccess;
 using MovieRecommendation.Core;
 using MovieRecommendation.Core.Services;
@@ -9,6 +10,7 @@ string connString = builder.Configuration.GetConnectionString("DefaultConnection
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddApplication();
 
 string cs = "server=ceku; database=MovieDb; trusted_connection=true";
 builder.Services.AddDbContext<EntityContext>(options => options.UseSqlServer(cs));
